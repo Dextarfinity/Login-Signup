@@ -13,97 +13,117 @@
     <title>Sign in & Sign up Form</title>
     </head>
   <body>
-      <div id="loader" class="">
-        <div class="circ">
+    <div id="loader" class="">
+      <div class="circ">
           <div class="load">Loading . . . </div>
           <div class="hands"></div>
           <div class="body"></div>
           <div class="head">
-            <div class="eye"></div>
+              <div class="eye"></div>
           </div>
-        </div>
       </div>
+  </div>
 
-      <div class="container1">
-        <div class="forms-container">
+        <!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">Success</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="modalMessage">Operation successful!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="btn" class="btn1" id="modalConfirmBtn">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container1">
+      <div class="forms-container">
           <div class="signin-signup">
-            <form action="#" class="sign-in-form">
+            <form action="#" class="sign-in-form" id="signInForm">
               <h2 class="title">Sign in</h2>
               <div class="input-field">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Email" />
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" id="email" name="email" placeholder="Email" required />
               </div>
               <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="password" name="password" placeholder="Password" required minlength="8" />
               </div>
               <div class="input-group mb-2 d-flex flex-wrap align-items-center justify-content-evenly">
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="formCheck">
-                  <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
-                </div>
-                <div class="forgot">
-                  <small><a href="#">Forgot Password?</a></small>
-                </div>
+                  <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="formCheck">
+                      <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+                  </div>
+                  <div class="forgot">
+                      <small><a href="#">Forgot Password?</a></small>
+                  </div>
               </div>
-              
-              <input type="submit" value="Login" class="btn solid btn-primary " />
-            </form>
-            <form action="#" class="sign-up-form">
-              <h2 class="title">Sign up</h2>
-              <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="First Name" />
-              </div>
-              <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Last Name" />
-              </div>
-              <div class="input-field">
-                <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password" />
-              </div>
-              <input type="submit" class="btn btn-primary " value="Sign up" />
-            </form>
+              <input type="submit" value="Login" class="btn solid btn-primary" />
+          </form>          
+
+              <form action="#" class="sign-up-form" id="signUpForm">
+                  <h2 class="title">Sign up</h2>
+                  <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" id="firstName" name="firstName" placeholder="First Name" required pattern="[A-Za-z]+" />
+                  </div>
+                  <div class="input-field">
+                      <i class="fas fa-user"></i>
+                      <input type="text" id="lastName" name="lastName" placeholder="Last Name" required pattern="[A-Za-z]+" />
+                  </div>
+                  <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                      <input type="email" id="emailSignUp" name="emailSignUp" placeholder="Email" required />
+                  </div>
+                  <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" id="passwordSignUp" name="passwordSignUp" placeholder="Password" required minlength="8" />
+                  </div>
+                  <input type="submit" class="btn btn-primary" value="Sign up" />
+              </form>
           </div>
-        </div>
-  
-        <div class="panels-container">
+      </div>
+
+      <div class="panels-container">
           <div class="panel left-panel">
-            <div class="content">
-              <h3>New here ?</h3>
-              <p>
-                Get picked up in no time using our hassle-free mobility application.
-              </p>
-              <button class="btn transparent text-white" id="sign-up-btn">
-                Sign up
-              </button>
-            </div>
-            <img src="img/login.svg" class="image" alt=""/>
+              <div class="content">
+                  <h3>New here?</h3>
+                  <p>
+                      Get picked up in no time using our hassle-free mobility application.
+                  </p>
+                  <button class="btn transparent text-white" id="sign-up-btn">
+                      Sign up
+                  </button>
+              </div>
+              <img src="img/login.svg" class="image" alt="" />
           </div>
           <div class="panel right-panel">
-            <div class="content">
-              <h3>One of us ?</h3>
-              <p>
-                Continue where you left off and enjoy seamless rides with our hassle-free mobility service.
-              </p>
-              <button class="btn transparent text-white" id="sign-in-btn">
-                Sign in
-              </button>
-            </div>
-            <img src="img/register.svg" class="image" alt="" />
+              <div class="content">
+                  <h3>One of us?</h3>
+                  <p>
+                      Continue where you left off and enjoy seamless rides with our hassle-free mobility service.
+                  </p>
+                  <button class="btn transparent text-white" id="sign-in-btn">
+                      Sign in
+                  </button>
+              </div>
+              <img src="img/register.svg" class="image" alt="" />
           </div>
-        </div>
       </div>
+  </div>
     <footer class="footer">
       <p>© 2024 HireMe. All rights reserved.</p>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>    
     <script src="app.js?v=1.0"></script>
   </body>
 </html>
