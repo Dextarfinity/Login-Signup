@@ -452,6 +452,12 @@ form.sign-in-form {
   justify-content: center;
   align-items: center;
   z-index: 9999; /* Ensure it stays on top */
+  transition: opacity 1s ease; /* Fade-out transition duration */
+  opacity: 1; /* Initially fully visible */
+}
+
+.fade-out {
+  opacity: 0; /* Fades out the loader */
 }
 
 .eye {
