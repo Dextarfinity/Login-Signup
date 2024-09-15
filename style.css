@@ -457,10 +457,7 @@ form.sign-in-form {
 
 #loader.hidden {
   opacity: 0;
-}
-
-.fade-out {
-  opacity: 0; /* Fades out the loader */
+  transition: opacity 1s ease-in-out;
 }
 
 .eye {
