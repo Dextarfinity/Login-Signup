@@ -1,13 +1,16 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const loader = document.getElementById('loader');
   
+  // Ensure the loader stays visible for at least 3 seconds
   setTimeout(() => {
-    loader.style.opacity = '0'; 
-    loader.style.transition = 'opacity 1s ease'; 
+    // Start fade-out transition
+    loader.classList.add('hidden');
+    
+    // After fade-out completes (1s), hide the loader completely
     setTimeout(() => {
       loader.style.display = 'none';
-    }, 1000);
-  }, 3000); 
+    }, 1000); // This matches the CSS transition time (1s)
+  }, 3000); // Keep loader for 3 seconds
 });
 
 
