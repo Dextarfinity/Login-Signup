@@ -12,5 +12,5 @@ sign_in_btn.addEventListener("click", () => {
 
 window.addEventListener('load', function() {
   const loader = document.getElementById('loader');
-  loader.style.display = 'none';
+  loader.style.display = 'none'; // Hides the loader
 });

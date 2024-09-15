@@ -527,7 +527,6 @@ form.sign-in-form {
   position: relative;
   z-index: -1;
   left: 0%;
-  top: 20%;
   overflow: hidden;
 }
 
