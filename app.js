@@ -6,6 +6,8 @@ window.addEventListener('load', function () {
       loader.classList.add('hidden');
       setTimeout(() => {
         loader.style.display = 'none';
+        // Initialize ScrollReveal after the loader is hidden
+        initScrollReveal();
       }, 1000); // Matches CSS transition duration
     }, 3000); // Keep the loader visible for at least 3 seconds
   } else {
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (valid) {
-        // Show success modal and redirect to sample.html
+        // Show success message and redirect to sample.html
         showSuccessModal('Login successful! Redirecting...', 'sample.html');
       }
     });
@@ -88,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (valid) {
-        // Show success modal and reload the page
-        showSuccessModal('Sign-up successful! Redirecting you to sign-up page...', 'index.html');
+        // Show success message and redirect to index.html
+        showSuccessModal('Sign-up successful! Redirecting you to our sign-up page.', 'index.html');
       }
     });
   } else {
@@ -139,16 +141,9 @@ function showSuccessModal(message, redirectUrl) {
     const confirmBtn = document.getElementById('modalConfirmBtn');
     if (confirmBtn) {
       confirmBtn.addEventListener('click', () => {
-        // Reload the page or redirect
-        if (redirectUrl === 'index.html') {
-          setTimeout(() => {
-            window.location.reload();
-          }, 2000); // Reload the page after 2 seconds
-        } else {
-          setTimeout(() => {
-            window.location.href = redirectUrl;
-          }, 2000); // Redirect after 2 seconds
-        }
+        setTimeout(() => {
+          window.location.href = redirectUrl;
+        }, 2000); // Redirect after 2 seconds
       });
     } else {
       throw new Error('Confirm button not found');
@@ -170,3 +165,4 @@ function clearMessages() {
   const successMessages = document.querySelectorAll('.success-message');
   successMessages.forEach(success => success.remove()); // Remove all success messages
 }
+
