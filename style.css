@@ -456,6 +456,10 @@ form.sign-in-form {
   opacity: 1; /* Initially visible */
 }
 
+.fade-out {
+  opacity: 0; /* Fades out the loader */
+}
+
 .eye {
   width: 20px;
   height: 8px;
