@@ -72,13 +72,13 @@
               <form action="#" class="sign-up-form" id="signUpForm">
                   <h2 class="title">Sign up</h2>
                   <div class="input-field">
-                      <i class="fas fa-user"></i>
-                      <input type="text" id="firstName" name="firstName" placeholder="First Name" required pattern="[A-Za-z]+" />
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required pattern="[A-Za-z\s]+" title="First name can only contain letters and spaces." />
                   </div>
                   <div class="input-field">
-                      <i class="fas fa-user"></i>
-                      <input type="text" id="lastName" name="lastName" placeholder="Last Name" required pattern="[A-Za-z]+" />
-                  </div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required pattern="[A-Za-z\s]+" title="Last name can only contain letters and spaces." />
+                  </div>                  
                   <div class="input-field">
                       <i class="fas fa-envelope"></i>
                       <input type="email" id="emailSignUp" name="emailSignUp" placeholder="Email" required />
