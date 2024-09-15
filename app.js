@@ -12,9 +12,11 @@ sign_in_btn.addEventListener("click", () => {
 
 window.addEventListener('load', function() {
   const loader = document.getElementById('loader');
-  
-  // Keep loader visible for 3 seconds
+
   setTimeout(() => {
-    loader.style.display = 'none'; // Hides the loader after 3 seconds
-  }, 3000); // 3000 milliseconds = 3 seconds
+    loader.classList.add('fade-out'); 
+    setTimeout(() => {
+      loader.style.display = 'none'; 
+    }, 1000); 
+  }, 3000); 
 });
