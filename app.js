@@ -14,7 +14,6 @@ window.addEventListener('load', function () {
     console.error("Loader element not found.");
   }
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const sign_in_btn = document.querySelector("#sign-in-btn");
   const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -76,21 +75,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const email = document.getElementById('emailSignUp').value;
       const password = document.getElementById('passwordSignUp').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
 
       let valid = true;
 
+      // Email validation
       if (!validateEmail(email)) {
         showError('emailSignUp', 'Please enter a valid email address.');
         valid = false;
       }
 
-      if (password.length < 8) {
-        showError('passwordSignUp', 'Password must be at least 8 characters long.');
+      // Password validation with regex
+      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      if (!passwordPattern.test(password)) {
+        showError('passwordSignUp', 'Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.');
+        valid = false;
+      }
+
+      // Confirm Password validation
+      if (password !== confirmPassword) {
+        showError('confirmPassword', 'Passwords do not match.');
         valid = false;
       }
 
       if (valid) {
-        // Show success message and redirect to index.html
+        // Show success modal and redirect
         showSuccessModal('Sign-up successful! Redirecting you to our sign-up page.', 'index.html');
       }
     });
@@ -165,4 +174,3 @@ function clearMessages() {
   const successMessages = document.querySelectorAll('.success-message');
   successMessages.forEach(success => success.remove()); // Remove all success messages
 }
-
